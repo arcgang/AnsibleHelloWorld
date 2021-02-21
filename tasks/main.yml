@@ -1,0 +1,11 @@
+---
+# tasks file for helloworld
+
+- name: echo 'hello world'
+  win_command: whoami
+  register: result
+
+- name: print message
+  debug:
+    msg: "{{ result.stdout_lines }}"
+
